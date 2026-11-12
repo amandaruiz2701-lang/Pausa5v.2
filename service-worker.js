@@ -3,7 +3,7 @@
 // ==========================================
 
 const CACHE_NAME =
-    "pausa5-v4.4";
+    "pausa5-v4.5";
 
 
 const APP_SHELL = [

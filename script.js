@@ -1427,8 +1427,8 @@ function seleccionarEstado(
     }
 
 
-    estadoSeleccionadoEmoji.textContent =
-        estado.emoji;
+    estadoSeleccionadoEmoji.innerHTML =
+        `<svg class="mascota mascota-${clave}" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-${clave}"></use></svg>`;
 
 
     estadoSeleccionadoTitulo.textContent =

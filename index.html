@@ -60,6 +60,103 @@
 
 <body>
 
+<!-- MASCOTA PAUSA5: sprite SVG. Los colores se controlan desde style.css (.mascota-*) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+
+        <!-- gota (lagrima / sudor) -->
+        <path id="m-gota" class="m-tear" d="M0 -44 C -4 -26 -17 -10 -17 12 C -17 33 17 33 17 12 C 17 -10 4 -26 0 -44 Z"/>
+
+        <!-- sparkle de 4 puntas -->
+        <path id="m-brillo" class="m-dark" d="M0 -26 Q 4 -4 26 0 Q 4 4 0 26 Q -4 4 -26 0 Q -4 -4 0 -26 Z"/>
+
+        <!-- cuerpo: pies, cabeza, gorro y mejillas -->
+        <g id="m-base">
+            <path class="m-dark" d="M128 596 C 112 640 138 688 205 694 C 275 700 330 668 322 640 C 312 612 250 592 190 590 C 160 588 135 590 128 596 Z"/>
+            <path class="m-dark" d="M330 640 C 322 668 362 698 430 696 C 495 694 530 656 522 616 C 515 588 470 572 420 576 C 372 580 335 610 330 640 Z"/>
+            <circle class="m-body" cx="308" cy="352" r="270"/>
+            <ellipse class="m-hat" cx="308" cy="74" rx="90" ry="14"/>
+            <rect class="m-hat" x="222" y="4" width="170" height="54" rx="24"/>
+            <rect class="m-white" x="226" y="52" width="162" height="10" rx="5"/>
+            <ellipse class="m-cheek" cx="209" cy="372" rx="46" ry="29"/>
+            <ellipse class="m-cheek" cx="484" cy="372" rx="46" ry="29"/>
+        </g>
+
+        <!-- brazos abajo -->
+        <g id="m-brazos">
+            <path class="m-dark" d="M40 338 C 5 352 -8 455 22 520 C 42 562 100 562 132 536 C 142 506 100 470 62 430 C 42 405 40 372 40 338 Z"/>
+            <path class="m-dark" d="M572 338 C 607 352 620 455 590 520 C 570 562 512 562 480 536 C 470 506 512 470 550 430 C 570 405 572 372 572 338 Z"/>
+        </g>
+
+        <!-- ojos redondos -->
+        <g id="m-ojos">
+            <circle class="m-line" cx="266" cy="299" r="26"/>
+            <circle class="m-line" cx="439" cy="299" r="26"/>
+        </g>
+
+        <!-- ESTRESADO: cejas preocupadas, boca ondulada, gota de sudor -->
+        <g id="mascota-estresado">
+            <use href="#m-base"/>
+            <use href="#m-brazos"/>
+            <use href="#m-ojos"/>
+            <path class="m-stroke" d="M226 280 L298 256 M480 280 L408 256"/>
+            <path class="m-stroke" d="M318 376 q 10 -16 20 0 t 20 0 t 20 0 t 20 0"/>
+            <use href="#m-gota" transform="translate(520 236) scale(.8)"/>
+        </g>
+
+        <!-- CANSADO: ojos entrecerrados, bostezo y Zz -->
+        <g id="mascota-cansado">
+            <use href="#m-base"/>
+            <use href="#m-brazos"/>
+            <path class="m-line" d="M240 300 A 26 26 0 0 0 292 300 Z"/>
+            <path class="m-line" d="M413 300 A 26 26 0 0 0 465 300 Z"/>
+            <path class="m-stroke" style="stroke-width:9" d="M232 300 H 300 M405 300 H 473"/>
+            <ellipse class="m-line" cx="352" cy="384" rx="22" ry="30"/>
+            <ellipse class="m-dark" cx="352" cy="398" rx="13" ry="11"/>
+            <path class="m-stroke" style="stroke-width:11" d="M500 62 h 44 l -44 56 h 44"/>
+            <path class="m-stroke" style="stroke-width:9" d="M562 14 h 30 l -30 38 h 30"/>
+        </g>
+
+        <!-- ENERGIA: brazos arriba, ojos brillantes, sonrisa grande y destellos -->
+        <g id="mascota-energia">
+            <use href="#m-base"/>
+            <path class="m-dark" d="M44 372 C 6 330 -6 250 10 190 C 18 156 64 156 72 190 C 80 240 104 300 118 338 Z"/>
+            <path class="m-dark" d="M570 372 C 608 330 620 250 604 190 C 596 156 550 156 542 190 C 534 240 510 300 496 338 Z"/>
+            <circle class="m-line" cx="266" cy="299" r="30"/>
+            <circle class="m-line" cx="439" cy="299" r="30"/>
+            <circle class="m-white" cx="256" cy="288" r="10"/>
+            <circle class="m-white" cx="429" cy="288" r="10"/>
+            <circle class="m-white" cx="277" cy="313" r="5"/>
+            <circle class="m-white" cx="450" cy="313" r="5"/>
+            <path class="m-line" d="M312 352 H 396 Q 396 414 354 414 Q 312 414 312 352 Z"/>
+            <ellipse class="m-dark" cx="354" cy="402" rx="21" ry="10"/>
+            <use href="#m-brillo" transform="translate(84 96) scale(1.1)"/>
+            <use href="#m-brillo" transform="translate(168 36) scale(.6)"/>
+            <use href="#m-brillo" transform="translate(548 70)"/>
+            <use href="#m-brillo" transform="translate(478 26) scale(.6)"/>
+        </g>
+
+        <!-- SATURADO: la carita triste original, con lagrima -->
+        <g id="mascota-saturado">
+            <use href="#m-base"/>
+            <use href="#m-brazos"/>
+            <use href="#m-ojos"/>
+            <path class="m-stroke" d="M322 372 Q 358 342 396 372"/>
+            <use href="#m-gota" transform="translate(266 397)"/>
+        </g>
+
+        <!-- BIEN: sonrisa tranquila -->
+        <g id="mascota-bien">
+            <use href="#m-base"/>
+            <use href="#m-brazos"/>
+            <use href="#m-ojos"/>
+            <path class="m-stroke" d="M316 362 Q 356 396 398 362"/>
+        </g>
+
+    </defs>
+</svg>
+
+
 
     <a
         class="skip-link"
@@ -498,7 +595,7 @@
                 >
 
                     <div class="mood-emoji">
-                        😫
+                        <svg class="mascota mascota-estresado" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-estresado"></use></svg>
                     </div>
 
                     <h3>
@@ -520,7 +617,7 @@
                 >
 
                     <div class="mood-emoji">
-                        🥱
+                        <svg class="mascota mascota-cansado" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-cansado"></use></svg>
                     </div>
 
                     <h3>
@@ -542,7 +639,7 @@
                 >
 
                     <div class="mood-emoji">
-                        😊
+                        <svg class="mascota mascota-energia" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-energia"></use></svg>
                     </div>
 
                     <h3>
@@ -564,7 +661,7 @@
                 >
 
                     <div class="mood-emoji">
-                        😵‍💫
+                        <svg class="mascota mascota-saturado" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-saturado"></use></svg>
                     </div>
 
                     <h3>
@@ -586,7 +683,7 @@
                 >
 
                     <div class="mood-emoji">
-                        🙂
+                        <svg class="mascota mascota-bien" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-bien"></use></svg>
                     </div>
 
                     <h3>
@@ -614,7 +711,7 @@
                     id="estadoSeleccionadoEmoji"
                     class="selected-mood-emoji"
                 >
-                    🙂
+                    <svg class="mascota mascota-bien" viewBox="-10 0 632 699" aria-hidden="true" focusable="false"><use href="#mascota-bien"></use></svg>
                 </div>
 
 

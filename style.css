@@ -4310,6 +4310,244 @@ footer .footer-logo span {
 
 
 
+/* MASCOTA */
+
+.mascota {
+
+    --m-tear:
+        #8ec9f2;
+
+    display:
+        block;
+
+    width:
+        88px;
+
+    height:
+        auto;
+
+    margin:
+        0 auto;
+
+    overflow:
+        visible;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+
+.mascota-estresado,
+.mascota-bien {
+
+    --m-body: #b9a2f5;
+    --m-dark: #8a72d6;
+    --m-hat: #d9cdfb;
+    --m-line: #5b45a8;
+
+}
+
+
+
+.mascota-cansado {
+
+    --m-body: #f6b4d0;
+    --m-dark: #e287ae;
+    --m-hat: #fbd7e6;
+    --m-line: #a94c77;
+
+}
+
+
+
+.mascota-energia {
+
+    --m-body: #f7d97a;
+    --m-dark: #e0b440;
+    --m-hat: #fdeaaa;
+    --m-line: #8a6a12;
+
+}
+
+
+
+.mascota-saturado {
+
+    --m-body: #a3dbb8;
+    --m-dark: #62b383;
+    --m-hat: #cdeedb;
+    --m-line: #35764f;
+
+}
+
+
+
+.m-body,
+.m-hat {
+
+    stroke:
+        var(--m-line);
+
+    stroke-width:
+        5;
+
+    stroke-linejoin:
+        round;
+
+}
+
+
+
+.m-body {
+
+    fill:
+        var(--m-body);
+
+}
+
+
+
+.m-hat {
+
+    fill:
+        var(--m-hat);
+
+}
+
+
+
+.m-dark {
+
+    fill:
+        var(--m-dark);
+
+}
+
+
+
+.m-line {
+
+    fill:
+        var(--m-line);
+
+}
+
+
+
+.m-stroke {
+
+    fill:
+        none;
+
+    stroke:
+        var(--m-line);
+
+    stroke-width:
+        14;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+}
+
+
+
+.m-white {
+
+    fill:
+        #ffffff;
+
+}
+
+
+
+.m-cheek {
+
+    fill:
+        #ffffff;
+
+    opacity:
+        0.88;
+
+}
+
+
+
+.m-tear {
+
+    fill:
+        var(--m-tear);
+
+}
+
+
+
+.mood-emoji {
+
+    margin-bottom:
+        14px;
+
+    font-size:
+        0;
+
+    line-height:
+        0;
+
+}
+
+
+
+.mood-card:hover .mascota {
+
+    transform:
+        translateY(-5px)
+        rotate(-4deg);
+
+}
+
+
+
+.mood-card.selected .mascota {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+
+.selected-mood-emoji .mascota {
+
+    width:
+        58px;
+
+}
+
+
+
+.mood-card {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-start;
+
+}
+
+
+
 /* RESPONSIVE */
 
 @media
